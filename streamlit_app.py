@@ -103,11 +103,12 @@ html_content = """
         }
         .success-message {
             color: white;
-            font-size: 3rem;
+            font-size: 2rem; /* Reduced from 3rem */
             text-align: center;
             z-index: 10;
             text-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4;
             animation: fadeIn 2s ease-in;
+            margin-top: 20px;
         }
         canvas {
             position: absolute;
@@ -134,7 +135,7 @@ html_content = """
         
         .gif-decoration {
             position: absolute;
-            width: 150px;
+            width: 100px; /* Reduced from 150px */
             height: auto;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
@@ -145,15 +146,15 @@ html_content = """
         /* Gift Button */
         #gift-button {
             position: absolute;
-            bottom: 50px;
+            bottom: 30px; /* Adjusted */
             left: 50%;
             transform: translateX(-50%);
             background-color: #FF1493;
             color: white;
             z-index: 20;
             border: 2px solid white;
-            font-size: 1.2rem;
-            padding: 12px 30px;
+            font-size: 1rem; /* Reduced from 1.2rem */
+            padding: 10px 25px; /* Reduced padding */
             opacity: 0;
             animation: fadeIn 1s ease-out 8s forwards, glowing 1.5s infinite 8s;
         }
@@ -303,11 +304,11 @@ html_content = """
             // Draw Leaves
             function drawLeaf(angle) {
                 ctx.save();
-                ctx.translate(centerX, centerY + 100);
+                ctx.translate(centerX, centerY + 70); // Moved up (was 100)
                 ctx.rotate(angle * Math.PI / 180);
                 ctx.beginPath();
                 ctx.fillStyle = '#FFA216';
-                ctx.ellipse(0, -100, 30, 100, 0, 0, 2 * Math.PI);
+                ctx.ellipse(0, -90, 25, 90, 0, 0, 2 * Math.PI); // Slightly smaller leaf
                 ctx.fill();
                 ctx.restore();
             }
@@ -321,13 +322,13 @@ html_content = """
             function drawCenter(i) {
                 if (i > 140) return;
                 
-                const r = 4 * Math.sqrt(i) * 5;
+                const r = 3.5 * Math.sqrt(i) * 5; // Reduced scale (was 4)
                 const theta = i * goldenAngle * (Math.PI / 180);
                 const x = centerX + r * Math.cos(theta);
                 const y = centerY + r * Math.sin(theta);
                 
                 ctx.beginPath();
-                ctx.arc(x, y, 4, 0, 2 * Math.PI);
+                ctx.arc(x, y, 3, 0, 2 * Math.PI); // Smaller seeds
                 ctx.fillStyle = '#8B4513';
                 ctx.fill();
                 
@@ -351,4 +352,4 @@ html_content = """
 """
 
 # Render the HTML
-components.html(html_content, height=1000, scrolling=False)
+components.html(html_content, height=800, scrolling=False)
