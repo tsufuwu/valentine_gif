@@ -27,13 +27,7 @@ const Sunflower = () => {
         ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Helper functions mimicking turtle graphics
-        const drawCircle = (x: number, y: number, r: number, color: string) => {
-            ctx.beginPath();
-            ctx.arc(x, y, r, 0, 2 * Math.PI);
-            ctx.fillStyle = color;
-            ctx.fill();
-        };
+
 
         // Draw Leaves
         const drawLeaf = (angle: number) => {
