@@ -87,8 +87,8 @@ html_content = """
         #no-button {
             background-color: var(--no-color);
             color: white;
-            position: absolute;
-            transition: top 0.2s, left 0.2s; /* Smooth movement */
+            /* position: absolute; REMOVED to fix layout overlap */
+            transition: top 0.2s, left 0.2s; /* Smooth movement when running away */
         }
         
         /* Sunflower Screen */
