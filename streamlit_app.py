@@ -146,20 +146,20 @@ html_content = """
         /* Gift Button */
         #gift-button {
             position: absolute;
-            bottom: 30px; /* Adjusted */
-            left: 50%;
-            transform: translateX(-50%);
+            top: 50%; /* Vertically centered */
+            left: 10%; /* Aligned with left GIFs */
+            transform: translateY(-50%);
             background-color: #FF1493;
             color: white;
             z-index: 20;
             border: 2px solid white;
-            font-size: 1rem; /* Reduced from 1.2rem */
-            padding: 10px 25px; /* Reduced padding */
+            font-size: 1rem;
+            padding: 10px 25px;
             opacity: 0;
             animation: fadeIn 1s ease-out 8s forwards, glowing 1.5s infinite 8s;
         }
         #gift-button:hover {
-            transform: translateX(-50%) scale(1.1);
+            transform: translateY(-50%) scale(1.1);
             background-color: #C71585;
         }
 
